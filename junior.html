@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Green FC | Junior Teams</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#0b6623;
+  --light:#32cd32;
+}
+
+body{margin:0;font-family:'Poppins',sans-serif;background:#f4f6f8}
+
+/* NAVBAR */
+.navbar{
+  position:sticky;top:0;z-index:999;
+  background:linear-gradient(135deg,rgba(11,102,35,.95),rgba(0,0,0,.9));
+  backdrop-filter:blur(12px);
+  padding:18px 0;
+  box-shadow:0 10px 40px rgba(0,0,0,.35);
+}
+.nav-container{
+  max-width:1250px;margin:auto;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 25px;
+}
+.logo{color:#fff;font-size:24px;font-weight:700}
+.nav-links a{
+  color:#ddd;margin-left:28px;text-decoration:none;
+  font-weight:500;position:relative;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:-6px;
+  width:0;height:2px;background:var(--light);transition:.3s;
+}
+.nav-links a:hover,
+.nav-links a.active{color:#fff}
+.nav-links a:hover::after,
+.nav-links a.active::after{width:100%}
+
+/* CONTENT */
+section{padding:90px 20px}
+.container{max-width:1200px;margin:auto}
+
+.section-title{text-align:center;margin-bottom:70px}
+.section-title h1{font-size:40px;color:var(--green)}
+.section-title p{max-width:650px;margin:auto;color:#555}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:35px;
+}
+
+.card{
+  background:#fff;
+  border-radius:20px;
+  padding:40px 30px;
+  box-shadow:0 20px 40px rgba(0,0,0,.12);
+  transition:.4s;
+}
+.card:hover{transform:translateY(-12px)}
+.card h3{color:var(--green);margin-bottom:10px}
+.card span{color:var(--light);font-weight:600;font-size:13px}
+
+footer{
+  background:#000;color:#aaa;text-align:center;
+  padding:40px;margin-top:80px
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <div class="nav-container">
+    <div class="logo">GREEN FC</div>
+    <div class="nav-links">
+      <a href="Green.html">Home</a>
+      <a href="senior.html">Squad</a>
+      <a href="junior.html" class="active">Junior</a>
+      <a href="youth.html">Academy</a>
+    </div>
+  </div>
+</div>
+
+<section>
+<div class="container">
+  <div class="section-title">
+    <h1>Junior Development Program</h1>
+    <p>Building confidence, discipline and love for football from an early age.</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <span>AGE 6–8</span>
+      <h3>U-8 Grassroots</h3>
+      <p>Fun-based training, ball control and teamwork fundamentals.</p>
+    </div>
+
+    <div class="card">
+      <span>AGE 9–10</span>
+      <h3>U-10 Progression</h3>
+      <p>Passing, positioning and early tactical understanding.</p>
+    </div>
+
+    <div class="card">
+      <span>AGE 11–12</span>
+      <h3>U-12 Foundation</h3>
+      <p>Match awareness, discipline and competitive mindset.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<footer>
+© 2026 Green Football Club · Junior Excellence
+</footer>
+
+</body>
+</html>

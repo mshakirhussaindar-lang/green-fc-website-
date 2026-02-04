@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green FC | Premium Squad</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#0f5132;
+  --accent:#22c55e;
+  --gold:#c9a227;
+  --bg:#ffffff;
+  --card:#ffffff;
+  --border:#e5e7eb;
+  --text:#0f172a;
+  --muted:#64748b;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+  position:sticky;
+  top:0;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  z-index:100;
+}
+.nav-inner{
+  max-width:1400px;
+  margin:auto;
+  padding:18px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  font-weight:800;
+  font-size:22px;
+  letter-spacing:2px;
+  color:var(--green);
+}
+.nav-links a{
+  margin-left:28px;
+  text-decoration:none;
+  color:var(--green);
+  font-weight:600;
+  position:relative;
+}
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--gold));
+  transition:.3s;
+}
+.nav-links a:hover::after{width:100%}
+
+/* ===== SECTION ===== */
+.section{
+  max-width:1400px;
+  margin:auto;
+  padding:80px 30px;
+}
+
+.header{text-align:center;margin-bottom:60px}
+.header h1{
+  font-size:44px;
+  font-weight:800;
+  color:var(--green);
+}
+.header p{
+  margin-top:14px;
+  color:var(--muted);
+}
+
+/* SEARCH */
+.search{text-align:center;margin-bottom:35px}
+.search input{
+  width:320px;
+  padding:14px 22px;
+  border-radius:40px;
+  border:1px solid var(--border);
+  outline:none;
+}
+
+/* FILTER */
+.filters{text-align:center;margin-bottom:50px}
+.filters button{
+  padding:10px 20px;
+  margin:6px;
+  border-radius:30px;
+  background:#fff;
+  border:1px solid var(--green);
+  color:var(--green);
+  font-weight:600;
+  cursor:pointer;
+}
+.filters button.active,
+.filters button:hover{
+  background:var(--green);
+  color:#fff;
+}
+
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+
+/* ===== PLAYER CARD ===== */
+.card{
+  position:relative;
+  background:var(--card);
+  border-radius:26px;
+  padding:38px 28px;
+  text-align:center;
+  box-shadow:0 30px 60px rgba(0,0,0,.08);
+  transition:.4s;
+}
+.card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 50px 90px rgba(0,0,0,.12);
+}
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--accent),var(--gold));
+}
+
+/* PHOTO */
+.photo{
+  width:120px;
+  height:120px;
+  margin:0 auto 20px;
+  padding:6px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--gold));
+}
+.photo img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+  background:#fff;
+}
+
+/* TEXT */
+.name{font-size:18px;font-weight:700}
+.role{
+  margin:8px 0;
+  color:var(--green);
+  font-size:13px;
+  font-weight:700;
+}
+.meta{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* BADGES */
+.number{
+  position:absolute;
+  top:18px;
+  left:18px;
+  background:var(--green);
+  color:#fff;
+  padding:6px 14px;
+  border-radius:30px;
+  font-weight:800;
+}
+.captain{
+  position:absolute;
+  top:18px;
+  right:18px;
+  background:linear-gradient(135deg,#facc15,var(--gold));
+  padding:6px 14px;
+  border-radius:30px;
+  font-weight:800;
+  color:#000;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:10px 22px;
+  border-radius:30px;
+  background:linear-gradient(135deg,var(--accent),var(--gold));
+  color:#052e16;
+  font-size:13px;
+  font-weight:800;
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="nav-inner">
+    <div class="logo">GREEN FC</div>
+    <div class="nav-links">
+      <a href="Green.html">Home</a>
+      <a href="senior.html">Squad</a>
+      <a href="academy.html">Academy</a>
+      <a href="club.html">Club</a>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION -->
+<section class="section">
+  <div class="header">
+    <h1>Elite First Team</h1>
+    <p>Official professional squad of Green Football Club</p>
+  </div>
+
+  <div class="search">
+    <input type="text" id="search" placeholder="Search player..." onkeyup="searchPlayer()">
+  </div>
+
+  <div class="filters">
+    <button class="active" onclick="filter('ALL',this)">All</button>
+    <button onclick="filter('GK',this)">GK</button>
+    <button onclick="filter('DEF',this)">DEF</button>
+    <button onclick="filter('MID',this)">MID</button>
+    <button onclick="filter('FWD',this)">FWD</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</section>
+
+<script>
+const players=[
+ {name:"James Wilson",num:9,role:"Forward",pos:"FWD",age:23,nat:"ENG",img:"https://i.pravatar.cc/300?img=12",captain:true},
+ {name:"Alex Johnson",num:8,role:"Midfielder",pos:"MID",age:24,nat:"USA",img:"https://i.pravatar.cc/300?img=32"},
+ {name:"Marcus Lee",num:5,role:"Defender",pos:"DEF",age:27,nat:"KOR",img:"https://i.pravatar.cc/300?img=45"},
+ {name:"Daniel Cruz",num:1,role:"Goalkeeper",pos:"GK",age:29,nat:"ESP",img:"https://i.pravatar.cc/300?img=15"},
+ {name:"Leo Martin",num:11,role:"Winger",pos:"FWD",age:21,nat:"FRA",img:"https://i.pravatar.cc/300?img=20"}
+];
+
+const grid=document.getElementById("grid");
+
+function render(list){
+  grid.innerHTML="";
+  list.forEach(p=>{
+    grid.innerHTML+=`
+    <div class="card">
+      <div class="number">#${p.num}</div>
+      ${p.captain?'<div class="captain">Captain</div>':""}
+      <div class="photo"><img src="${p.img}"></div>
+      <div class="name">${p.name}</div>
+      <div class="role">${p.role}</div>
+      <div class="meta">Age ${p.age} • ${p.nat}</div>
+      <a class="btn" href="#">View Profile</a>
+    </div>`;
+  });
+}
+
+function searchPlayer(){
+  const v=document.getElementById("search").value.toLowerCase();
+  render(players.filter(p=>p.name.toLowerCase().includes(v)));
+}
+
+function filter(pos,btn){
+  document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  if(pos==="ALL") render(players);
+  else render(players.filter(p=>p.pos===pos));
+}
+
+render(players);
+</script>
+
+</body>
+</html>

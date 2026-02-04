@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Football Club | Official Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #0B5D1E;
+            --secondary-green: #147A3D;
+            --accent-green: #3DFF8E;
+
+            --white: #ffffff;
+            --black: #0a0a0a;
+            --light-gray: #f4f7f5;
+            --dark-gray: #1f2933;
+
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --border-soft: rgba(255, 255, 255, 0.15);
+
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.12);
+            --shadow-hover: 0 20px 45px rgba(0, 0, 0, 0.2);
+
+            --transition: all 0.35s ease;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+            font-family: 'Open Sans', sans-serif;
+            letter-spacing: 0.2px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--black);
+            font-size: 1.05rem;
+            color: #4b5563;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: var(--accent-green);
+            bottom: -8px;
+            left: 0;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+
+    font-size: 1.05rem;
+    color: #4b5563;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-green);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-green);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .section {
+    padding: 110px 0;
+}
+
+
+        
+
+        .section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 0.8s ease;
+        }
+
+        .section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 14px 34px;
+            border-radius: 50px;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            box-shadow: var(--shadow-soft);
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-green);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-green);
+        }
+
+        .btn-accent:hover {
+            background-color: #2aa82a;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-green);
+            color: var(--primary-green);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        /* Header and Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: var(--transition);
+            backdrop-filter: blur(14px);
+            background: rgba(255, 255, 255, 0.85);
+            border-bottom: 1px solid #e5e7eb;
+
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 800;
+            font-size: 1.5rem;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+        }
+
+        .logo-text span {
+            color: var(--accent-green);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-item {
+            margin-left: 30px;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--dark-gray);
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: var(--accent-green);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover:after,
+        .nav-link.active:after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background:
+                linear-gradient(180deg, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9)),
+                url('https://images.unsplash.com/photo-1551958219-acbc608c6377');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-size: 4.5rem;
+            text-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+
+        }
+
+        /* About Section */
+        /* About Elite Section */
+.about-elite {
+  background: linear-gradient(180deg, #ffffff, #f3f7f4);
+}
+
+/* Header */
+.about-header {
+  max-width: 750px;
+  margin: auto;
+  text-align: center;
+}
+
+.section-tag {
+  display: inline-block;
+  background: rgba(29,185,84,0.12);
+  color: var(--primary-green);
+  padding: 6px 18px;
+  border-radius: 18px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.about-header p {
+  margin-top: 15px;
+  font-size: 1.05rem;
+  color: #555;
+}
+
+/* Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  margin-top: 70px;
+}
+
+/* Story */
+.about-story h3 {
+  font-size: 1.7rem;
+  margin-bottom: 18px;
+}
+
+.about-story p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Values */
+.about-values {
+  display: grid;
+  gap: 30px;
+}
+
+.value-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.value-card i {
+  font-size: 1.8rem;
+  color: var(--primary-green);
+  margin-bottom: 15px;
+}
+
+.value-card h4 {
+  margin-bottom: 10px;
+}
+
+/* Stats */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 25px;
+  margin-top: 80px;
+}
+
+.stat-box {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #0b5d1e, #1db954);
+  color: #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.stat-box strong {
+  font-size: 2rem;
+}
+
+.stat-box span {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+     
+            
+        /* executive */
+
+        .executives-section {
+  background: var(--light-gray);
+}
+
+.executives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.executive-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 22px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.executive-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.executive-image {
+  width: 110px;
+  height: 110px;
+  margin: auto;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.executive-card h4 {
+  margin-bottom: 5px;
+}
+
+.executive-card span {
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 600;
+}
+
+
+       /* Chairman Signature Section */
+.chairman-signature {
+  background: radial-gradient(circle at top, #f6fff9, #ffffff);
+}
+
+/* Layout */
+.chairman-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+/* Left Identity */
+.chairman-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #0b5d1e, #1db954);
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.chairman-identity h2 {
+  font-size: 2.6rem;
+  margin-bottom: 8px;
+}
+
+.chairman-role {
+  font-weight: 600;
+  color: var(--secondary-green);
+  margin-bottom: 30px;
+}
+
+/* Quote */
+.chairman-identity blockquote {
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-style: italic;
+  padding-left: 30px;
+  color: #333;
+}
+
+.chairman-identity blockquote::before {
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -10px;
+  font-size: 4rem;
+  color: var(--primary-green);
+}
+
+/* Right Card */
+.chairman-card {
+  background: rgba(255,255,255,0.95);
+  border-radius: 30px;
+  box-shadow: var(--shadow-soft);
+  padding: 45px;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 35px;
+  transition: var(--transition);
+}
+
+.chairman-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Photo */
+.chairman-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1db954, #0b5d1e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.8rem;
+  color: #fff;
+}
+
+/* Details */
+.chairman-details h3 {
+  margin-bottom: 12px;
+}
+
+.chairman-details p {
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Stats */
+.chairman-stats {
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.chairman-stats div {
+  text-align: center;
+}
+
+.chairman-stats strong {
+  font-size: 1.6rem;
+  color: var(--primary-green);
+}
+
+.chairman-stats span {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+/* Responsive */
+@media(max-width: 900px) {
+  .chairman-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .chairman-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+
+        /* Teams Section */
+        .teams-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-image {
+            height: 200px;
+            background-color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 5rem;
+        }
+
+        .team-info {
+            padding: 25px;
+        }
+
+        /* Players Section */
+        .players-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 25px;
+            padding: 20px 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-green) var(--light-gray);
+        }
+
+        .players-slider::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .players-slider::-webkit-scrollbar-track {
+            background: var(--light-gray);
+            border-radius: 10px;
+        }
+
+        .players-slider::-webkit-scrollbar-thumb {
+            background-color: var(--primary-green);
+            border-radius: 10px;
+        }
+
+        .player-card {
+            min-width: 250px;
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .player-image {
+            height: 250px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--primary-green);
+        }
+
+        .player-info {
+            padding: 20px;
+        }
+
+        .player-number {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Fixtures Section */
+        .fixtures-section {
+            background-color: var(--light-gray);
+        }
+
+        .fixtures-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .match-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .match-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .match-date {
+            color: var(--secondary-green);
+            font-weight: 600;
+        }
+
+        .match-score {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-green);
+        }
+
+        .fixtures-section {
+  background: linear-gradient(180deg, #f4f7f5, #ffffff);
+}
+
+.fixtures-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+  margin-top: 50px;
+}
+
+.fixture-card {
+  position: relative;
+  padding: 35px 30px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+}
+
+.fixture-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Match badge */
+.match-badge {
+  position: absolute;
+  top: -14px;
+  left: 25px;
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50px;
+  background: #111;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.match-badge.win {
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.match-badge.draw {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+/* Teams layout */
+.teams {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.team {
+  text-align: center;
+}
+
+.team i {
+  font-size: 2.2rem;
+  color: var(--primary-green);
+}
+
+.team h4 {
+  margin-top: 8px;
+  font-size: 1.1rem;
+}
+
+.vs {
+  font-weight: 800;
+  color: #999;
+}
+
+.score {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--primary-green);
+}
+
+/* Match info */
+.match-info {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.match-info span {
+  background: #f1f5f9;
+  padding: 6px 14px;
+  border-radius: 50px;
+}
+
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .news-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-image {
+            height: 200px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            font-size: 4rem;
+        }
+
+        .news-content {
+            padding: 25px;
+        }
+
+        .news-date {
+            color: var(--secondary-green);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+/* Gallery Section */
+/* Gallery Section */
+.gallery-section {
+  background: #f6f9f7;
+}
+
+/* Header */
+.gallery-header {
+  text-align: center;
+  max-width: 650px;
+  margin: auto;
+}
+
+.gallery-header p {
+  margin-top: 10px;
+  color: #555;
+}
+
+/* Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-auto-rows: 220px;
+  gap: 25px;
+  margin-top: 60px;
+}
+
+/* Item */
+.gallery-item {
+  position: relative;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #0b5d1e, #1db954);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  transition: 0.35s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.gallery-item:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+/* Wide Card */
+.gallery-item.wide {
+  grid-column: span 2;
+}
+
+/* Label */
+.gallery-item span {
+  background: rgba(0,0,0,0.45);
+  padding: 6px 14px;
+  border-radius: 14px;
+  font-size: 0.8rem;
+}
+
+/* Responsive */
+@media(max-width: 700px) {
+  .gallery-item.wide {
+    grid-column: span 1;
+  }
+}
+
+
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.3rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent-green);
+            transform: translateY(-3px);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .map-container {
+            height: 300px;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-green);
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .footer-logo .logo-text {
+            color: var(--white);
+        }
+
+        .footer-links h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .fixtures-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .achievements {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--white);
+                text-align: center;
+                transition: var(--transition);
+                box-shadow: var(--shadow);
+                padding: 20px 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 15px 0;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .achievements {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 110px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <div class="header-container container">
+            <div class="logo">
+                <div class="logo-icon">GFC</div>
+                <div class="logo-text">GREEN<span>FC</span></div>
+            </div>
+
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#teams" class="nav-link">Teams</a></li>
+                <li class="nav-item"><a href="#fixtures" class="nav-link">Fixtures</a></li>
+                <li class="nav-item"><a href="#news" class="nav-link">News</a></li>
+                <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Green Football Club</h1>
+                <p>Passion. Teamwork. Community. Excellence.</p>
+                <p>Welcome to the official website of Green FC, where football is more than a game - it's a way of life.
+                    Join us in our journey to promote teamwork, sportsmanship, and community values.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn">Join Us</a>
+                    <a href="#fixtures" class="btn btn-accent">View Fixtures</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+   <section class="section about-elite">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="about-header">
+      <span class="section-tag">Our Club</span>
+      <h2>Green Football Club</h2>
+      <p>
+        A modern football institution built on passion, discipline, and the
+        relentless pursuit of excellence — on and off the pitch.
+      </p>
+    </div>
+
+    <!-- Story Grid -->
+    <div class="about-grid">
+
+      <!-- Story -->
+      <div class="about-story">
+        <h3>Our Journey</h3>
+        <p>
+          Founded with a vision to redefine grassroots football, Green Football Club
+          has grown into a respected name known for professionalism, youth development,
+          and competitive excellence.
+        </p>
+        <p>
+          From local tournaments to national recognition, every chapter of our journey
+          reflects resilience, unity, and an unshakable commitment to progress.
+        </p>
+      </div>
+
+      <!-- Vision / Mission -->
+      <div class="about-values">
+
+        <div class="value-card">
+          <i class="fas fa-eye"></i>
+          <h4>Our Vision</h4>
+          <p>
+            To become a benchmark football club that nurtures talent, builds character,
+            and inspires future generations.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <i class="fas fa-bullseye"></i>
+          <h4>Our Mission</h4>
+          <p>
+            To provide elite training, modern facilities, and a values-driven
+            environment where players thrive.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="about-stats">
+      <div class="stat-box">
+        <strong>2012</strong>
+        <span>Founded</span>
+      </div>
+      <div class="stat-box">
+        <strong>12+</strong>
+        <span>Years of Excellence</span>
+      </div>
+      <div class="stat-box">
+        <strong>8</strong>
+        <span>Major Trophies</span>
+      </div>
+      <div class="stat-box">
+        <strong>100+</strong>
+        <span>Registered Players</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Our Chairman -->
+ <section class="section chairman-signature">
+  <div class="container">
+
+    <div class="chairman-wrapper">
+
+      <!-- Left -->
+      <div class="chairman-identity">
+        <span class="chairman-tag">Club Chairman</span>
+        <h2>Mr. Daniel Anderson</h2>
+        <p class="chairman-role">Chairman & Founder</p>
+
+        <blockquote>
+          “Football is not just a game — it’s a responsibility to build character,
+          unity, and future champions.”
+        </blockquote>
+      </div>
+
+      <!-- Right -->
+      <div class="chairman-card">
+        <div class="chairman-photo">
+          <i class="fas fa-user-tie"></i>
+        </div>
+
+        <div class="chairman-details">
+          <h3>Leadership Since 2012</h3>
+          <p>
+            Under Mr. Anderson’s visionary leadership, Green Football Club has
+            transformed into a competitive and community-driven organization,
+            setting new benchmarks in professionalism and youth development.
+          </p>
+
+          <div class="chairman-stats">
+            <div>
+              <strong>12+</strong>
+              <span>Years</span>
+            </div>
+            <div>
+              <strong>8</strong>
+              <span>Trophies</span>
+            </div>
+            <div>
+              <strong>35+</strong>
+              <span>Youth Players</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Our Executives-->
+<section class="section executives-section">
+  <div class="container">
+    <h2>Our Executives</h2>
+
+    <div class="executives-grid">
+
+      <div class="executive-card">
+        <div class="executive-image">
+          <i class="fas fa-user"></i>
+        </div>
+        <h4>Mr. Ali Raza</h4>
+        <span>Chief Executive Officer (CEO)</span>
+      </div>
+
+      <div class="executive-card">
+        <div class="executive-image">
+          <i class="fas fa-user"></i>
+        </div>
+        <h4>Ms. Sara Ahmed</h4>
+        <span>Chief Operations Officer (COO)</span>
+      </div>
+
+      <div class="executive-card">
+        <div class="executive-image">
+          <i class="fas fa-user"></i>
+        </div>
+        <h4>Mr. Hassan Malik</h4>
+        <span>Technical Director</span>
+      </div>
+
+      <div class="executive-card">
+        <div class="executive-image">
+          <i class="fas fa-user"></i>
+        </div>
+        <h4>Mr. Usman Farooq</h4>
+        <span>Finance Director</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Teams Section -->
+    <section class="section" id="teams">
+        <div class="container">
+            <h2>Our Teams</h2>
+            <div class="teams-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Senior Team</h3>
+                        <p>Our premier squad competing in the National League. Composed of experienced players and
+                            rising talents, they represent the pinnacle of our club's footballing excellence.</p>
+                        <a href="senior.html" target="_blank" class="btn btn-outline">View Squad</a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Youth Academy</h3>
+                        <p>Developing future stars aged 12-18. Our academy focuses on technical skills, tactical
+                            understanding, and personal development in a supportive environment.</p>
+                        <a href="youth.html" target="_blank" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <div class="team-info">
+                        <h3>Junior Teams</h3>
+                        <p>For players aged 6-12, focusing on fun, fundamentals, and fostering a love for the game. We
+                            emphasize participation, teamwork, and sportsmanship.</p>
+                        <a href="junior.html" target="_blank" class="btn btn-outline">Join Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 60px;">Key Players</h3>
+            <div class="players-slider">
+                <div class="player-card">
+                    <div class="player-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="player-info">
+                        <div class="player-number">7</div>
+                        <h4>James Wilson</h4>
+                        <p><strong>Position:</strong> Forward</p>
+                        <p>Club captain and top scorer for the past three seasons. Known for his leadership and clinical
+                            finishing.</p>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="player-info">
+                        <div class="player-number">1</div>
+                        <h4>Marcus Rodriguez</h4>
+                        <p><strong>Position:</strong> Goalkeeper</p>
+                        <p>Record for most clean sheets in club history. Exceptional shot-stopper with great
+                            distribution skills.</p>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="player-info">
+                        <div class="player-number">10</div>
+                        <h4>Alex Johnson</h4>
+                        <p><strong>Position:</strong> Midfielder</p>
+                        <p>Creative playmaker with excellent vision and passing ability. Academy graduate and fan
+                            favorite.</p>
+                    </div>
+                </div>
+
+                <div class="player-card">
+                    <div class="player-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="player-info">
+                        <div class="player-number">4</div>
+                        <h4>Samuel Chen</h4>
+                        <p><strong>Position:</strong> Defender</p>
+                        <p>Strong and composed center-back. Defensive anchor who organizes the backline effectively.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixtures Section -->
+  <section class="section fixtures-section" id="fixtures">
+  <div class="container">
+    <h2>Fixtures & Results</h2>
+
+    <div class="fixtures-grid">
+
+      <!-- Upcoming Match -->
+      <div class="fixture-card upcoming">
+        <span class="match-badge">UPCOMING</span>
+
+        <div class="teams">
+          <div class="team">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Green FC</h4>
+          </div>
+
+          <span class="vs">VS</span>
+
+          <div class="team">
+            <i class="fas fa-shield"></i>
+            <h4>City United</h4>
+          </div>
+        </div>
+
+        <div class="match-info">
+          <span><i class="far fa-calendar"></i> May 15, 2023</span>
+          <span><i class="far fa-clock"></i> 3:00 PM</span>
+          <span><i class="fas fa-map-marker-alt"></i> Home</span>
+        </div>
+      </div>
+
+      <!-- Result Match -->
+      <div class="fixture-card result">
+        <span class="match-badge win">RESULT</span>
+
+        <div class="teams">
+          <div class="team">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Green FC</h4>
+          </div>
+
+          <span class="score">3 : 1</span>
+
+          <div class="team">
+            <i class="fas fa-shield"></i>
+            <h4>United Lions</h4>
+          </div>
+        </div>
+
+        <div class="match-info">
+          <span><i class="far fa-calendar"></i> May 1, 2023</span>
+          <span><i class="fas fa-trophy"></i> Home Win</span>
+        </div>
+      </div>
+
+      <!-- Result Match -->
+      <div class="fixture-card draw">
+        <span class="match-badge draw">RESULT</span>
+
+        <div class="teams">
+          <div class="team">
+            <i class="fas fa-shield"></i>
+            <h4>Wanderers</h4>
+          </div>
+
+          <span class="score">2 : 2</span>
+
+          <div class="team">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Green FC</h4>
+          </div>
+        </div>
+
+        <div class="match-info">
+          <span><i class="far fa-calendar"></i> April 24, 2023</span>
+          <span><i class="fas fa-balance-scale"></i> Draw</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- News Section -->
+    <section class="section" id="news">
+        <div class="container">
+            <h2>News & Updates</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">May 5, 2023</span>
+                        <h4>Historic Win Against United Lions</h4>
+                        <p>Green FC secures a decisive 3-1 victory against league leaders United Lions, with James
+                            Wilson scoring a brace.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">April 28, 2023</span>
+                        <h4>Youth Academy Tournament Success</h4>
+                        <p>Our U16 team wins the Regional Youth Cup, showcasing the talent developing in our academy
+                            program.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
+                    </div>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-image">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">April 20, 2023</span>
+                        <h4>Community Outreach Program Launch</h4>
+                        <p>Green FC announces a new initiative to provide free football coaching to underprivileged
+                            children in the community.</p>
+                        <a href="#" class="btn btn-outline">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+   <section class="section gallery-section">
+  <div class="container">
+
+    <div class="gallery-header">
+      <h2>Club Gallery</h2>
+      <p>Memorable moments from matches, training sessions, and celebrations.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <span>Match Day</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Training Session</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Trophy Moment</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Team Spirit</span>
+      </div>
+
+      <div class="gallery-item wide">
+        <span>Club Highlights</span>
+      </div>
+
+      <div class="gallery-item">
+        <span>Fans & Support</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Green Stadium, 123 Football Way<br>Sports City, SC 12345</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(123) 456-7890</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@greenfootballclub.com</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <i class="fas fa-map-marked-alt"></i> Google Maps Location
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <div class="logo-icon">GFC</div>
+                        <div class="logo-text">GREEN<span>FC</span></div>
+                    </div>
+                    <p style="margin-top: 15px; color: #ccc;">Passion. Teamwork. Community. Excellence.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#teams">Teams</a></li>
+                        <li><a href="#fixtures">Fixtures</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Club</h4>
+                    <ul>
+                        <li><a href="#news">News & Updates</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Shop</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Membership</a></li>
+                        <li><a href="#">Tickets</a></li>
+                        <li><a href="#">Sponsorship</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2023 Green Football Club. All rights reserved. | Designed with passion for the beautiful game.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.querySelector('i').classList.toggle('fa-bars');
+            hamburger.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.querySelector('i').classList.add('fa-bars');
+                hamburger.querySelector('i').classList.remove('fa-times');
+
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(item => {
+                    item.classList.remove('active');
+                });
+                link.classList.add('active');
+            });
+        });
+
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '5px 0';
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+            } else {
+                header.style.padding = '0';
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            }
+
+            // Update active nav link based on scroll position
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Player slider automatic scroll
+        const playerSlider = document.querySelector('.players-slider');
+        let isScrolling = false;
+
+        function autoScrollSlider() {
+            if (!isScrolling && playerSlider) {
+                playerSlider.scrollLeft += 1;
+
+                // Reset to beginning when reaching the end
+                if (playerSlider.scrollLeft >= (playerSlider.scrollWidth - playerSlider.clientWidth - 10)) {
+                    setTimeout(() => {
+                        playerSlider.scrollLeft = 0;
+                    }, 3000);
+                }
+            }
+        }
+
+        // Start auto-scrolling
+        let scrollInterval = setInterval(autoScrollSlider, 30);
+
+        // Pause auto-scroll on hover
+        if (playerSlider) {
+            playerSlider.addEventListener('mouseenter', () => {
+                isScrolling = true;
+            });
+
+            playerSlider.addEventListener('mouseleave', () => {
+                isScrolling = false;
+            });
+        }
+
+        const sections = document.querySelectorAll('.section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        sections.forEach(sec => observer.observe(sec));
+
+    </script>
+</body>
+
+</html>
